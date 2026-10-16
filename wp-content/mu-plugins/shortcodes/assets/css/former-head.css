@@ -1,0 +1,133 @@
+.arch-container > h2{
+    padding: 10px 15px;
+    margin: 0 0 20px;
+}
+
+.arch-container .arch-box {
+    text-align: center;
+    display: block;
+    width: 100%;
+    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.17);
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    padding: 20px 15px;
+    margin: 0 0 30px;
+}
+.arch-container .arch-box img {
+    height: 170px;
+    margin: 0 auto 15px;
+    max-width: 100%;
+    width: auto;
+}
+
+.arch-container .arch-box .arch-desc {
+    margin: 0 0 5px;
+}
+
+.arch-container .arch-box .arch-desc:last-child {
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+.arch-container .arch-box{ margin: 0 0 20px;}
+.arch-container > h2{ padding: 5px 10px;}
+}
+
+.contrast .arch-container > h2{ border: 1px solid #fff;}
+.contrast .arch-container .arch-box{ background-color: #000; border: 1px solid #fff;}
+.style-1 .contrast .arch-container > h2, .style-2 .contrast .arch-container > h2,
+.style-3 .contrast .arch-container > h2, .style-4 .contrast .arch-container > h2,
+.style-5 .contrast .arch-container > h2, .style-6 .contrast .arch-container > h2,
+.style-7 .contrast .arch-container > h2{background-color: #000 !important;}
+
+
+/*Former heads css for home page*/
+.formr-heads-cntr ul{
+    margin: 0 0 0 -12px;
+    padding: 0;
+}
+.formr-heads-cntr ul li{
+    list-style: none;
+    float: left;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    text-align: center
+}
+
+.formr-heads-cntr.two-col ul li{
+    width: calc(50% - 12px);
+}
+.formr-heads-cntr.three-col ul li{
+    width: calc(33.333% - 12px);
+}
+.formr-heads-cntr.four-col ul li{
+    width: calc(25% - 12px);
+}
+.formr-heads-cntr.five-col ul li{
+    width: calc(20% - 12px);
+}
+.formr-heads-cntr ul li img{
+    height: 115px;
+    width: 115px;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+}
+.former-hd-btncntr{
+    display: inline-block;
+    width: 100%;
+}
+.former-hd-btncntr a:hover {
+    text-decoration: underline;
+}
+.formr-heads-cntr .former-hd-btncntr{
+    margin-top: 15px;
+}
+.formr-heads-cntr.btn-center .former-hd-btncntr{
+    text-align: center;
+}
+.formr-heads-cntr.btn-right .former-hd-btncntr{
+    text-align: right;
+}
+.style-11 .arch-container .arch-box{
+    background-color: #feeecc;
+    border-radius: 6px;
+    box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.15);
+    border-color: #d7d7d7;
+}
+
+.contrast .arch-container .arch-box{
+    background-color: #000;
+}
+
+
+@media (max-width: 640px) {
+    .formr-heads-cntr.two-col ul li,
+    .formr-heads-cntr.three-col ul li,
+    .formr-heads-cntr.four-col ul li,
+    .formr-heads-cntr.five-col ul li{
+        width: calc(33.33% - 12px);
+    }
+}
+@media (max-width: 540px) {
+    .formr-heads-cntr.two-col ul li,
+    .formr-heads-cntr.three-col ul li,
+    .formr-heads-cntr.four-col ul li,
+    .formr-heads-cntr.five-col ul li{
+        width: calc(50% - 12px);
+    }
+    .former-hd-btncntr {
+        text-align: center;
+    }
+}
+@media (max-width: 400px) {
+    .formr-heads-cntr.two-col ul li,
+    .formr-heads-cntr.three-col ul li,
+    .formr-heads-cntr.four-col ul li,
+    .formr-heads-cntr.five-col ul li{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

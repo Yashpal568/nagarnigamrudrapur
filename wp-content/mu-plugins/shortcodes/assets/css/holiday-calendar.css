@@ -1,0 +1,138 @@
+.scalendar-container {position: relative;background: #fff;margin-bottom: 26px;overflow: hidden;}
+
+.scalendar-header {text-align: center;color: #000;background-color: #fff;font-size: 1.5em;display: grid;grid-template-columns: 50px calc(100% - 100px) 50px;border: 2px solid #bcdaf7;}
+
+.scalendar-header .scalendar-prev, .scalendar-header .scalendar-next {transition: 0.3s ease-in;font-family: FontAwesome;background: #e3f0fd;color: #0c71b9;}
+.scalendar-header .scalendar-prev{ border-right: 2px solid #bcdaf7;}
+.scalendar-header .scalendar-next{ border-left: 2px solid #bcdaf7;}
+.scalendar-header .scalendar-prev:hover, .scalendar-header .scalendar-next:hover {background: #d1e5f9;}
+.scalendar-header div, .scalendar-header a {padding: 10px;display: block;line-height: 35px;text-transform: uppercase;}
+
+
+.scalendar-header .scalendar-month-name {font-weight: 500;}
+
+.scalendar-container table { table-layout: fixed;margin: 0;border: 2px solid #bcdaf7;border-top: 0;}
+.scalendar-container table caption {color: #000 !important;background: #fff;border: 2px solid #bcdaf7;border-top: none;font-weight: 500;}
+
+.scalendar-container thead th {color: #000;border:0;border-bottom: 2px solid #dbe9f7;border-left: 1px solid #dbe9f7;text-align: center;font-weight: 600;}
+.scalendar-container thead th:first-child {border-left: 0;}
+
+.scalendar-container tbody td {text-align: center;font-weight: 500;background: #fbfbfb;padding: 18px 0;border: 1px solid #dbe9f7;border-bottom: 0;border-right: 0;position: relative;}
+.scalendar-container.calendarBig tbody td {line-height: 55px;}
+.scalendar-container tbody td:hover {background: #ecf2f7;}
+.scalendar-container tbody tr:last-child td {border-top: none;border-bottom: none;}
+
+.scalendar-container tbody td.current-date {background: #e3f0fd;color: #0c71b9;}
+.scalendar-container tbody td.has-holidays { padding: 0;}
+.scalendar-container tbody td.has-holidays a {padding: 18px 0;display: block;color: #ffffff;}
+.scalendar-container tbody td.has-holidays.weekend-working a {color: #000;}
+
+.scalendar-container tbody td {border-bottom: 0;border-right: 0;}
+.scalendar-container tbody tr:first-child td{border-top: 0;}
+.scalendar-container tbody td:first-child{border-left: 0;}
+.scalendar-container tbody tr:nth-last-child(2) td {border-bottom: 1px solid #dbe9f7;}
+.scalendar-container tbody tr:last-child td:last-child:not(.last-seven){border-right: 1px solid #dbe9f7 !important; }
+
+.scalendar-container table tfoot,.scalendar-container table thead {background:#f3f9ff;}
+.scalendar-container table tfoot tr td{padding:0; border:0;border-top: 2px solid #dbe9f7;}
+
+.scalendar-container tfoot div.holiday-type {
+  border: 0;padding: 15px 4px;border-left: 1px solid #dbe9f7;font-weight: 400;display:inline-block;
+  width: 25%;text-align: center;vertical-align: top;
+}
+.scalendar-container tfoot div.holiday-type:first-child {border-left: 0;}
+.scalendar-container tfoot div.holiday-type > span {display: inline-block;width: 15px;height: 15px;margin-right: 3px;background: #dab312;vertical-align: middle;}
+.scalendar-container tfoot div.holiday-type:nth-child(1) > span {background: #CE0D03;}
+.scalendar-container tfoot div.holiday-type:nth-child(2) > span {background: #1D8406;}
+.scalendar-container tfoot .holiday-type:nth-child(3) > span {background: #1545d3;}
+
+
+.scalendar-container .h-tooltip {
+  display: none;position: absolute;font-size: 13px;text-transform: initial;background: #333;
+  color: #fff;padding: 10px 10px;left: -50px;right: -50px;z-index: 2;bottom: 100%;text-align: left;max-width: 300px;
+}
+.scalendar-container .h-tooltip:after {content: "";border: 7px solid transparent;border-bottom: 0;border-top: 7px solid #333;position: absolute;bottom: -7px;left: 50%;margin-left: -3.5px;}
+.scalendar-container .h-tooltip p {margin: 0;}
+.scalendar-container table tbody td:hover .h-tooltip, table tbody td a:focus + .h-tooltip { display: block;}
+.scalendar-container tbody td.saturday .h-tooltip {right: 0;left: -63%;}
+.scalendar-container tbody td.saturday .h-tooltip:after {right: 28%;left: auto;}
+.scalendar-container tbody td.sunday .h-tooltip {left: 0;right: -100%;}
+.scalendar-container tbody td.sunday .h-tooltip:after {left: 30%;}
+.scalendar-container tbody td.gazetted a {background: #CE0D03 !important;}
+.scalendar-container tbody td.vacations a {background: #dab312 !important;color: #000;}
+.scalendar-container tbody td.restricted a {background: #1D8406 !important;}
+.scalendar-container tbody.holiday-text-color-only td.restricted a {background: #fbfbfb !important; color: #1D8406;    font-weight: 700;}
+.scalendar-container tbody td.weekend{color: #fff;
+    background-color: #1545d3;}
+
+.scalendar-container .scalendar-days-inner {position: relative;}
+
+.scalendar-container .sc-loader {position: absolute;background: rgba(0, 0, 0, 0.5);color: #fff;left: 0;top: 0;bottom: 0;right: 0;z-index: 999;font-size: 3em;}
+.scalendar-container .sc-loader span {top: 50%;display: inline-block;position: absolute;left: 50%;margin-top: -28px;margin-left: -21px;}
+.calender-view-more  .horizontal_view_more{bottom:0; right:25px}
+.show-focus-outlines .scalendar-container a:focus,.show-focus-outlines .scalendar-container tbody td[tabindex="0"]:focus {outline: 3px solid #D67600;outline-offset: -3px;}
+.show-focus-outlines .scalendar-container tbody td.has-holidays a:focus, .show-focus-outlines .scalendar-container tbody td[tabindex="0"]:focus {outline: 3px solid #000000;}
+
+
+/*.sc-holiday-btn {position: absolute;top: 2px;font-size: 19px;cursor: pointer;transition: 0.3s;}
+.sc-close {right: 5px;}
+.sc-back {left: 5px;}
+.sc-close:hover, .sc-back:hover {color: #fff !important;}
+.sc-holidays-list ul li {text-align: left;padding: 3px 5px;font-size: 13px;color: #dfdfdf;border: none;border-bottom: 1px solid #504b4b;transition: 0.3s ease-in-out;}
+.sc-holidays-list ul li:hover {background: rgba(255, 255, 255, 0.08);}
+.sc-holidays-list ul li:last-child {border: none;}
+.sc-holidays-list ul li p {margin: 0;}
+
+.sc-holidays-list {overflow: hidden;height: 92%;padding: 5px;}
+.sc-holidays-list .sc-title a:hover {color: #dfdfdf;}
+.sc-icon span {margin-right: 5px;}
+.sc-location span {font-size: 17px;}
+.scalendar-container table td a > span.cl-holiday-past {background: #555555;}
+.scalendar-container table td a > span.cl-holiday {background: #01bb64;}
+.scalendar-container table td a > span.cl-holiday-up {background: #0078d7;}
+.scalendar-holidays-by-date {
+  display: none;visibility: hidden;color: #ccc;position: absolute;top: 0px;
+  bottom: 0;left: 0;right: 0;background: rgba(0, 0, 0, 0.87);
+}
+.scalendar-holidays-date-heading {height: 8%;text-align: center;padding: 5px 5px;border-bottom: 1px solid #d2dae2;font-size: 15px;font-weight: bold;text-transform: uppercase;}
+*/
+
+.scalendar-container .blank-date {visibility: hidden;background-color: #d2dae2;}
+
+.contrast .scalendar-container, .contrast .scalendar-header {background: #000 !important;}
+.contrast .scalendar-container  .scalendar-header.accent-border-color { background: #000 !important;border: 1px solid #ccc !important;}
+.contrast .scalendar-container tbody.scalendar-days-list td.weekend {color: #809ae9;box-shadow: 0 0 0 4px #809ae9 inset;}
+.contrast .scalendar-container thead th:last-child {border-right: 1px solid #ccc;}
+.contrast .scalendar-container  thead th:first-child {border-left: 1px solid #ccc;}
+.contrast .scalendar-container table td,
+.contrast .scalendar-header .scalendar-prev,
+.contrast .scalendar-header .scalendar-next {background: #222 !important;}
+.contrast .scalendar-container table td.gazetted a { background-color: #000000 !important;box-shadow: 0 0 0 4px #CE0D03 inset; }
+.contrast .scalendar-container table td.restricted a { background-color: #000000 !important;box-shadow: 0 0 0 4px #1D8406 inset; }
+.contrast .scalendar-container table td.vacations a { background-color: #000000 !important;box-shadow: 0 0 0 4px #dab312  inset; }
+.contrast .scalendar-container table tbody td.current-date {background: #fff !important;color: #000 !important;}
+.contrast .scalendar-container table caption{border-bottom:2px solid #fff !important; color: #fff !important;}
+@media screen and (max-width: 1199px) {
+  table tfoot td {font-size: 13px;}
+}
+
+@media screen and (max-width: 992px) {
+  .scalendar-header div, .scalendar-header a {padding: 5px;font-size: 80%;}
+  .scalendar-container table.bt tbody td::before {font-weight: 500;}
+  table thead td {padding: 10px 0;}
+  table tfoot td { padding: 5px 6px; font-size: 15px;}
+  table tfoot td:before {  display: none !important;}
+  table tbody tr:nth-child(even) td { background: none !important;}
+
+}
+@media screen and (max-width: 400px) {
+  .scalendar-container thead th {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}
+
+@media print {
+  .scalendar-container.calendarBig tbody td {line-height: normal;}
+  .scalendar-header a {visibility: hidden;}
+}
